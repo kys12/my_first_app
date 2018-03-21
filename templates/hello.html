@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title> My Flask App Page </title>
+		<link rel="stylesheet" type="text/css" 
+		href="{{ url_for("static", filename="css/main.css") }}">
+	</head>
+	<body>
+		{% if name %}
+			<p> Hello {{name}}! </p>
+		{% else %}
+			<p>Hello anonymous person!</p>
+		{% endif %}
+	</body>
+	<p>Let's keep in touch!</p>
+		<div id="contact-form">
+			<form method="post" action="/signup">
+				<label for="email">Email address:</label>
+				<input type="email" id="email" name="email"
+required="required">
+				<input type="submit" value="Submit" id="submit-
+button">
+			</form>
+		</div>
+
+</html>
+
+<!-- Variable name surrounded by double quotation marks -->
+<!-- This is the Jinja syntax that allows us to access python variables
+We will declare this variable "name" in our python -->
+<!-- Remember html doesn't have if, else, logic so having the is jinja's way of allowing us to do that -->
+<!-- If this condition is true...then print Hello , Otherwise print Hello Anonymous person. Endif - is how you end the conditional aspect, as you need to finish off the code with body> either way -->
